@@ -3,7 +3,7 @@ import requests
 
 
 def get_quote():
-    talk = requests.get(url="https://api.kanye.rest")
+    talk = requests.get(url="https://api.kanye.rest", timeout=60)
     quote = talk.json()
     open_q = quote['quote']
     canvas.itemconfig(quote_text, text= open_q)
